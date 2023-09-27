@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+    .background-color {
+        background-color: #86d2f2;
+        height: 100vh;
+    }
+
+    .Button {
+        font-size: 10px;
+        color: white;
+        background-color: #1f1d41;
+        border-width: 0px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .background-color-traffic-light {
+        background-color: #1f1d41;
+        height: 270px;
+        width: 90px;
+        border-radius: 30px;
+        text-align: center;
+    }
+
+    .bulb {
+        background-color: #4b5069;
+        width: 50px;
+        height: 50px;
+        padding: 10px 0px;
+        border-width: 0px;
+        border-radius: 55px;
+    }
+</style>
+
+<body>
+    <div class="background-color">
+        <h1 class="text-center">Traffic Light</h1>
+        <div class="mt-3 d-flex flex-row justify-content-center">
+            <div class="d-flex flex-column">
+                <button class="Button mt-5 mb-5" id="stopButton" onclick="stopLightSwitch()">Stop</button>
+                <button class="Button mb-5" id="readyButton" onclick="readyLightSwitch()">Ready</button>
+                <button class="Button mb-5" id="goButton" onclick="goLightSwitch()">Go</button>
+            </div>
+            <div class="background-color-traffic-light m-3">
+                <div class="bulb mt-4 mb-2 m-3" id="stopLight"></div>
+                <div class="bulb mt-4 m-3" id="readyLight"></div>
+                <div class="bulb mt-4 m-3" id="goLight"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let redButtonElement = document.getElementById("stopButton");
+        let yellowButtonElement = document.getElementById("readyButton");
+        let greenButtonElement = document.getElementById("goButton");
+
+
+        let redLightElement = document.getElementById("stopLight");
+        let yellowLightElement = document.getElementById("readyLight");
+        let greeenLightElement = document.getElementById("goLight");
+
+        const red = false;
+        const yellow = false;
+        const green = false;
+        const temp = true;
+
+        function stopLightSwitch() {
+            redButtonElement.style.backgroundColor = "#cf1124";
+            redLightElement.style.backgroundColor = "#cf1124";
+            yellowButtonElement.style.backgroundColor = "#1f1d41";
+            yellowLightElement.style.backgroundColor = "#4b5069";
+            greenButtonElement.style.backgroundColor = "#1f1d41";
+            greeenLightElement.style.backgroundColor = "#4b5069";
+
+        }
+
+
+        function readyLightSwitch() {
+            redButtonElement.style.backgroundColor = "#1f1d41";
+            redLightElement.style.backgroundColor = "#4b5069";
+            yellowButtonElement.style.backgroundColor = "#f7c948";
+            yellowLightElement.style.backgroundColor = "#f7c948";
+            greenButtonElement.style.backgroundColor = "#1f1d41";
+            greeenLightElement.style.backgroundColor = "#4b5069";
+        }
+
+        function goLightSwitch() {
+            redButtonElement.style.backgroundColor = "#1f1d41";
+            redLightElement.style.backgroundColor = "#4b5069";
+            yellowButtonElement.style.backgroundColor = "#1f1d41";
+            yellowLightElement.style.backgroundColor = "#4b5069";
+            greenButtonElement.style.backgroundColor = "#199473";
+            greeenLightElement.style.backgroundColor = "#199473";
+        }
+    </script>
+</body>
+
+</html>
